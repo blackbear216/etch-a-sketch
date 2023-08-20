@@ -4,10 +4,13 @@ function initializeGrid() {
         const div = document.createElement('div');
         div.classList.toggle('box');
         div.addEventListener('mouseover', () => {
-            div.setAttribute('style', 'background: grey;');
+            div.classList.toggle('hover');
         })
         div.addEventListener('mouseleave', () => {
-            div.setAttribute('style', 'background: white;');
+            div.classList.toggle('hover');
+        })
+        div.addEventListener('mousedown', () => {
+            div.classList.toggle('filled');
         })
         container.appendChild(div);
     }
