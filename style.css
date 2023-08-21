@@ -1,5 +1,12 @@
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grid {
+    display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 512px;
