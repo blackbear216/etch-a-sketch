@@ -70,8 +70,14 @@ function getSize() {
 function clearGrid() {
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
-        console.log("hello");
     }
+}
+
+function clearBoard() {
+const boxes = document.querySelectorAll('.box');
+boxes.forEach((box) => {
+    box.classList.remove('filled');
+})
 }
 
 initializeGrid(size)
