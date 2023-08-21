@@ -1,5 +1,5 @@
 let size = 16;
-const container = document.querySelector('.container');
+const grid = document.querySelector('.grid');
 
 function initializeGrid(size) {
     let zDown = false;
@@ -52,7 +52,7 @@ function initializeGrid(size) {
            
             subContainer.appendChild(div);
         }
-        container.appendChild(subContainer);
+        grid.appendChild(subContainer);
     }
 }
 
@@ -68,8 +68,8 @@ function getSize() {
 }
 
 function clearGrid() {
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
         console.log("hello");
     }
 }
