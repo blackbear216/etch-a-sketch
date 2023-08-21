@@ -22,7 +22,8 @@
     flex-direction: column;
     width: 512px;
     height: 512px;
-    padding: 16px;
+    margin: 16px;
+    background-color: white;
 }
 
 .subcontainer {
@@ -35,7 +36,6 @@
     width: 14px;
     flex-grow: 1;
     border: 1px dotted lightgrey;
-    background-color: white;
 }
 
 .hover {
