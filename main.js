@@ -1,4 +1,4 @@
-function initializeGrid() {
+function initializeGrid(size) {
     const container = document.querySelector('.container');
 
     let zDown = false;
@@ -28,34 +28,32 @@ function initializeGrid() {
         }
     })
 
-    for (let i = 0; i < 256; i++) {
-        const div = document.createElement('div');
-        div.classList.toggle('box');
+    for (let i = 0; i < size; i++) {
+        const subContainer = document.createElement('div');
+        subContainer.classList.toggle('subcontainer');
+        for (let j = 0; j < size; j++) {
+            const div = document.createElement('div');
+            div.classList.toggle('box');
 
-        div.addEventListener('mouseover', () => {
-            div.classList.toggle('hover');
-            // if Z down, draw in square
-            if (zDown == true) {
-                div.classList.add('filled');
-            // if E down, erase in square
-            } else if (eDown == true) {
-                div.classList.remove('filled');
-            }
-        })
-        div.addEventListener('mouseleave', () => {
-            div.classList.toggle('hover');
-        })
-
-        container.appendChild(div);
+            div.addEventListener('mouseover', () => {
+                div.classList.toggle('hover');
+                // if Z down, draw in square
+                if (zDown == true) {
+                    div.classList.add('filled');
+                // if E down, erase in square
+                } else if (eDown == true) {
+                    div.classList.remove('filled');
+                }
+            })
+            div.addEventListener('mouseleave', () => {
+                div.classList.toggle('hover');
+            })
+           
+            subContainer.appendChild(div);
+        }
+        container.appendChild(subContainer);
     }
 }
 
-function initializeDrawingFunctionality() {
-
-}
-
-function initializeErasingFunctionality() {
-
-}
-
-initializeGrid()
+let size = 16;
+initializeGrid(size)
