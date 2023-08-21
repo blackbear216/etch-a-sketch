@@ -1,8 +1,19 @@
+.header {
+    text-align: center;
+    font-family:sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    padding: 16px;
+    color: crimson;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: crimson;
+    padding: 16px;
 }
 
 .grid {
@@ -11,6 +22,7 @@
     flex-direction: column;
     width: 512px;
     height: 512px;
+    padding: 16px;
 }
 
 .subcontainer {
@@ -37,14 +49,27 @@
 .circle-button {
     width: 64px;
     height: 64px;
-    border: 4px solid black;
+    border: 8px dashed white;
+    background-color: lightgrey;
     border-radius: 32px;
     text-align: center;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:sans-serif;
 }
 
 .buttons {
     width: 512px;
     display: flex;
     justify-content: space-between;
+}
+
+.z {
+    background-color: grey;
+}
+
+.e {
+    background-color: grey;
 }

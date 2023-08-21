@@ -4,16 +4,20 @@ const grid = document.querySelector('.grid');
 function initializeGrid(size) {
     let zDown = false;
     let eDown = false;
+    const letterZ = document.querySelector('#z');
+    const letterE = document.querySelector('#e');
 
     // handles drawing
     document.addEventListener('keydown', (e) => {
         if (e.code == 'KeyZ') {
             zDown = true
+            letterZ.classList.add('z');
         }
     })
     document.addEventListener('keyup', (e) => {
         if (e.code == 'KeyZ') {
             zDown = false
+            letterZ.classList.remove('z');
         }
     })
 
@@ -21,11 +25,13 @@ function initializeGrid(size) {
     document.addEventListener('keydown', (e) => {
         if (e.code == 'KeyE') {
             eDown = true
+            letterE.classList.add('e');
         }
     })
     document.addEventListener('keyup', (e) => {
         if (e.code == 'KeyE') {
             eDown = false
+            letterE.classList.remove('e');
         }
     })
 
