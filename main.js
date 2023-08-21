@@ -1,6 +1,7 @@
-function initializeGrid(size) {
-    const container = document.querySelector('.container');
+let size = 16;
+const container = document.querySelector('.container');
 
+function initializeGrid(size) {
     let zDown = false;
     let eDown = false;
 
@@ -35,7 +36,7 @@ function initializeGrid(size) {
             const div = document.createElement('div');
             div.classList.toggle('box');
 
-            div.addEventListener('mouseover', () => {
+            div.addEventListener('mouseenter', () => {
                 div.classList.toggle('hover');
                 // if Z down, draw in square
                 if (zDown == true) {
@@ -55,5 +56,22 @@ function initializeGrid(size) {
     }
 }
 
-let size = 16;
+function getSize() {
+    let size = prompt("How many squares per grid? (Max 100)");
+    if (size > 100) {
+        size = 100;
+    } else if (size < 16) {
+        size = 16;
+    }
+    clearGrid();
+    initializeGrid(size);
+}
+
+function clearGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+        console.log("hello");
+    }
+}
+
 initializeGrid(size)
